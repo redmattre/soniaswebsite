@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="works.css">
     <title>works</title>
 </head>
 <body>
@@ -57,19 +58,25 @@
 
         <div class="bodyText">
             <h3>works</h3>
-            qui metteremo una meravigliosa tabella alla formafantasma 
-            che sia coerente con la grandezza degli scacchi e che dentro sia divisa con
-            la stessa grandezza degli scacchi. E anche delle categorie invece di works
-            (praticamente un sottomenu).
+            il mio lavoro è sempre diverso e multidisciplinare perchè questo motivo e quest'altro etc ed è
+            per questo che questo menù permette di sceglire categorie
         </div>
 
-        <div class="bodyText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum est, earum inventore voluptatibus odit minus sunt voluptas placeat magnam dolorem consectetur amet dicta architecto minima. Aperiam sequi praesentium quos ab?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum sed qui, obcaecati veritatis facere recusandae eum culpa aliquam illum unde molestias, placeat corporis soluta. Ducimus aliquid saepe nisi rerum totam?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel odit deleniti similique voluptatibus tempore dolorem dolores sapiente ab distinctio asperiores quam facere tempora, rem natus? Natus qui voluptates animi ipsum.
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque quam nihil distinctio molestias? Pariatur molestiae animi esse aspernatur est, cumque ipsam vero rerum temporibus corporis in sunt earum voluptatibus iure.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, tempore eum aut doloremque provident eligendi magnam beatae neque incidunt quibusdam tempora impedit quam cumque. Soluta quae officia aperiam nisi. Est.
+        <div class="filter-menu">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="fruit">Fruit</button>
+            <button data-filter="vegetable">Vegetable</button>
+            <button data-filter="dairy">Dairy</button>
         </div>
+    
+        <ul id="item-list">
+            <li data-category="fruit"> 05.2024 • Apple • Exhibition</li>
+            <li data-category="vegetable"> 01.2024 • Carrot • Research</li>
+            <li data-category="fruit">02.2023 • Banana • Product, Exhibition</li>
+            <li data-category="dairy"> 01.2023 • Cheese • Exhibition</li>
+            <li data-category="vegetable"> 05.2022 • Lettuce • Research</li>
+            <li data-category="dairy"> 04.2021 • Milk • Research</li>
+        </ul>
 
         <div id="footer">
             <div id="footer-text-sx">
@@ -79,7 +86,7 @@
                 follow me on SOCIAL, SOCIAL
             </div>
             <div id="footer-text-dx">
-                <a href=""></a>Colophon<br>
+                <a href="https://www.pierpaoloovarini.it/" target="_blank" class="footer-links">Colophon <br> <br> <br> <br> <br></a><br>
                 - <br>
                 - <br>
                 - <br>
@@ -91,5 +98,32 @@
     <script src="navbar.js"></script>
     <script src="theme.js"></script>
     <script src="lefty.js"></script>
+    <script>
+        // JavaScript for filtering and menu highlighting
+        const buttons = document.querySelectorAll('.filter-menu button');
+        const items = document.querySelectorAll('#item-list li');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove the 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                // Add 'active' class to the clicked button
+                this.classList.add('active');
+
+                // Get the filter value
+                const filterValue = this.getAttribute('data-filter');
+
+                // Show/hide list items based on the filter
+                items.forEach(item => {
+                    if (filterValue === 'all' || item.dataset.category === filterValue) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

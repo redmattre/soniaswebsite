@@ -11,6 +11,8 @@
   --scacchi: var(--grigino);
 
   --textcolor: var(--nerone);
+
+  --pageUnit: calc(10vw / 1.6);
 }
 
 body {
@@ -18,6 +20,7 @@ body {
   padding: 0;
   overscroll-behavior: none;
   color: var(--textcolor);
+  /* min-height: 100vh; */
 
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: var(--fondale) 0rem 0rem 1px;
@@ -35,6 +38,10 @@ body {
       linear-gradient(to bottom, var(--grigino) 1px, transparent 1px);
 }
 
+/* .container {
+  min-height: 100%;
+} */
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -44,7 +51,7 @@ body {
   top: 0;
   padding-top: 1rem;
   background: transparent;
-  margin-bottom: 6rem;
+  margin-bottom: 5.5rem;
 }
 
 #mainName {
@@ -65,13 +72,17 @@ body {
 a {
   all: unset;
   cursor: pointer;
+  /* display: inline;
+  text-decoration: none;
+  color: inherit; */
+  /* background-color: red; */
 }
 
 .bodyText {
   margin-left: 25vw;
   margin-right: 25vw;
   
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 4rem;
   text-align: left;
   line-height: 1.5;
@@ -166,6 +177,8 @@ a {
 }
 
 #footer {
+  margin-top: auto;
+  bottom: 0;
   height: 8rem;
   background-color: var(--fondale);
   border-top: var(--grigino) 1px solid;
@@ -194,4 +207,10 @@ a {
   justify-content: right;
   align-items: center;
   margin-right: 5vw;
+}
+
+.footer-links {
+  position: absolute;
+  /* width: 4rem;
+  height: 2rem; */
 }
