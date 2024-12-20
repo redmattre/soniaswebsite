@@ -13,12 +13,14 @@ function applyTheme() {
     root.style.setProperty('--fondale', '#6C6C6A'); // Grey background
     root.style.setProperty('--dettaglio', '#B27F97'); // Pink details
     root.style.setProperty('--textcolor', '#fff'); // White text
+    root.style.setProperty('--fondaleLight', 'var(--griginoNoAlpha)');
     localStorage.setItem('theme', 'dark'); // Save to localStorage
   } else {
     // Apply light theme
     root.style.setProperty('--fondale', '#fff'); // White background
     root.style.setProperty('--dettaglio', 'red'); // Red details
     root.style.setProperty('--textcolor', 'black'); // Black text
+    root.style.setProperty('--fondaleLight', '#fff');
     localStorage.setItem('theme', 'light'); // Save to localStorage
   }
 }

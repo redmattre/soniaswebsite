@@ -5,10 +5,12 @@
   --nerone: black;
   --rosso: red;
   --grigino: rgba(128, 128, 128, 0.5);
+  --griginoNoAlpha: rgba(128, 128, 128);
 
   --fondale: var(--bianchino);
   --dettaglio: var(--rosso);
   --scacchi: var(--grigino);
+  --fondaleLight: var(--griginoNoAlpha);
 
   --textcolor: var(--nerone);
 

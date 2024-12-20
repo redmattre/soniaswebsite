@@ -1,7 +1,7 @@
 .card {
   width: 240px;
   height: 314px;
-  background: rgb(236, 236, 236);
+  background: var(--fondaleLight);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   
   margin-left: 30vw;
@@ -40,10 +40,12 @@
 }
 
 #immagine3 {
+    /* padding: 10px; */
     text-shadow: none;
-    background-image: url();
+    background-image: url("heart_easteregg.webp");
     background-position: center;
-    background-size: cover;
+    background-size: 60%;
+    background-repeat:no-repeat;
 }
 
 @media only screen and (orientation: portrait) {
@@ -54,4 +56,12 @@
       margin-left: 10vw;
       margin-right: 10vw;
   }
+}
+
+.clickableLink {
+    /* height: inherit; */
+    /* width: 200px; */
+    /* z-index: 99; */
+    /* position: absolute; */
+    /* background-color: red; */
 }
